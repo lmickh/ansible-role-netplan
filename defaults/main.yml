@@ -1,0 +1,19 @@
+---
+netplan_file: "60_ansible.yaml"
+netplan_path: "/etc/netplan"
+
+# Yaml formatted netplan config (https://netplan.io/design#network-config-format)
+netplan_config: {}
+
+netplan_enabled: true
+
+netplan_packages:
+  - netplan.io
+  - nplan
+
+# Set defaults for when not defined in the netplan_config
+netplan_renderer: networkd
+netplan_version: 2
+
+# This removes any config not managed by this role
+netplan_wipe: false

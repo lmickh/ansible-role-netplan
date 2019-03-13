@@ -1,0 +1,32 @@
+---
+network:
+  version: {{ netplan_config['network']['version'] | default(netplan_version) }}
+  renderer: {{ netplan_config['network']['renderer'] | default(netplan_renderer) }}
+{% if netplan_config['network']['ethernets'] is defined %}
+  ethernets:
+{{ netplan_config['network']['ethernets'] | to_nice_yaml | indent(width=4,first=true) }}
+{% endif %}
+{% if netplan_config['network']['wifis'] is defined %}
+  wifis:
+{{ netplan_config['network']['wifis'] | to_nice_yaml | indent(width=4,first=true) }}
+{% endif %}
+{% if netplan_config['network']['bonds'] is defined %}
+  bonds:
+{{ netplan_config['network']['bonds'] | to_nice_yaml | indent(width=4,first=true) }}
+{% endif %}
+{% if netplan_config['network']['bridges'] is defined %}
+  bridges:
+{{ netplan_config['network']['bridges'] | to_nice_yaml | indent(width=4,first=true) }}
+{% endif %}
+{% if netplan_config['network']['tunnels'] is defined %}
+  tunnels:
+{{ netplan_config['network']['tunnels'] | to_nice_yaml | indent(width=4,first=true) }}  
+{% endif %}
+{% if netplan_config['network']['veths'] is defined %}
+  veths:
+{{ netplan_config['network']['veths'] | to_nice_yaml | indent(width=4,first=true) }}
+{% endif %}
+{% if netplan_config['network']['vlans'] is defined %}
+  vlans:
+{{ netplan_config['network']['vlans'] | to_nice_yaml | indent(width=4,first=true) }}
+{% endif %}

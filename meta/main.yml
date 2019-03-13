@@ -1,0 +1,15 @@
+dependencies: []
+galaxy_info:
+  author: lmickh
+  description: Install and configure netplan
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+    - name: Ubuntu
+      versions:
+        - bionic
+  galaxy_tags:
+    - networking

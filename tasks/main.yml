@@ -1,0 +1,11 @@
+---
+- import_tasks: install.yml
+  when: netplan_enabled
+
+- import_tasks: wipe.yml
+  when:
+    - netplan_enabled
+    - netplan_wipe
+
+- import_tasks: configure.yml
+  when: netplan_enabled

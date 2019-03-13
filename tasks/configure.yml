@@ -1,0 +1,8 @@
+---
+- name: Configure netplan
+  become: true
+  template:
+    src: templates/etc/netplan/config.yaml.j2
+    dest: "{{ netplan_path }}/{{ netplan_file}}"
+  when: netplan_config != {}
+  notify: netplan generate config
