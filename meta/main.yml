@@ -1,5 +1,6 @@
 dependencies: []
 galaxy_info:
+  role_name: netplan
   author: lmickh
   description: Install and configure netplan
   license: MIT
