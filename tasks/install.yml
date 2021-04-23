@@ -5,4 +5,4 @@
     name: netplan_packages
     state: present
   when:
-    - ansible_os_family == 'Debain'
+    - ansible_os_family == 'Debian'
